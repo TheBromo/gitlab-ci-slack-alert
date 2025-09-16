@@ -62,7 +62,6 @@ def parse_email_from_ci_commit_author(s):
 
 def lookup_user_id_by_email(client, email):
     #TODO:
-    # email = "manuel+slack@strenge.ch"
     if not email:
         return ""
     try:
@@ -92,7 +91,7 @@ def open_dm(client, user_id):
 def post_message(client, channel, text, blocks=None):
     try:
         response = client.chat_postMessage(
-            channel="ci",
+            channel=channel,
             text=text,
             blocks=blocks
         )
